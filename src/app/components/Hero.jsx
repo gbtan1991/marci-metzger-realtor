@@ -71,21 +71,21 @@ export function Hero() {
                 <div className="flex items-center gap-2 text-primary">
                   <Home size={20} />
                 </div>
-                <p className="font-[--font-serif]" style={{ fontSize: '1.75rem', fontWeight: '600' }}>500+</p>
+                <p className="font-[--font-serif]" style={{ fontSize: '1.75rem', fontWeight: '600' }}>701+</p>
                 <p className="text-sm text-muted-foreground">Properties Sold</p>
               </div>
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-primary">
                   <Users size={20} />
                 </div>
-                <p className="font-[--font-serif]" style={{ fontSize: '1.75rem', fontWeight: '600' }}>350+</p>
-                <p className="text-sm text-muted-foreground">Happy Clients</p>
+                <p className="font-[--font-serif]" style={{ fontSize: '1.75rem', fontWeight: '600' }}>$36K-$775K</p>
+                <p className="text-sm text-muted-foreground">Average Price</p>
               </div>
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-primary">
                   <Award size={20} />
                 </div>
-                <p className="font-[--font-serif]" style={{ fontSize: '1.75rem', fontWeight: '600' }}>30+</p>
+                <p className="font-[--font-serif]" style={{ fontSize: '1.75rem', fontWeight: '600' }}>31+</p>
                 <p className="text-sm text-muted-foreground">Years Experience</p>
               </div>
             </div>
