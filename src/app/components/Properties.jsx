@@ -13,6 +13,7 @@ export function Properties() {
       baths: 2,
       sqft: "1,396",
       status: "For Sale",
+      zillowUrl: "https://www.zillow.com/homedetails/5067-Semifonte-Dr-Pahrump-NV-89061/89190931_zpid/",
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ export function Properties() {
       baths: 3,
       sqft: "2,338",
       status: "For Sale",
+      zillowUrl: "https://www.zillow.com/homedetails/4829-E-Beacon-Ridge-Dr-Pahrump-NV-89061/251824766_zpid/",
     },
     {
       id: 3,
@@ -35,6 +37,7 @@ export function Properties() {
       baths: 4,
       sqft: "2,692",
       status: "For Sale",
+      zillowUrl: "https://www.zillow.com/homedetails/4725-S-Santa-Fiora-St-Pahrump-NV-89061/96312005_zpid/",
     },
     {
       id: 4,
@@ -46,6 +49,7 @@ export function Properties() {
       baths: 3,
       sqft: "1,910",
       status: "For Sale",
+      zillowUrl: "https://www.zillow.com/homedetails/1640-Moose-St-Pahrump-NV-89048/62705987_zpid/",
     },
     {
       id: 5,
@@ -57,6 +61,7 @@ export function Properties() {
       baths: 4,
       sqft: "2,877",
       status: "For Sale",
+      zillowUrl: "https://www.zillow.com/homedetails/2851-Winchester-Ave-Pahrump-NV-89048/62707075_zpid/",
     },
     {
       id: 6,
@@ -68,6 +73,7 @@ export function Properties() {
       baths: 3,
       sqft: "2,802",
       status: "For Sale",
+      zillowUrl: "https://www.zillow.com/homedetails/2061-Iroquois-Ave-Pahrump-NV-89048/62708465_zpid/",
     },
   ];
 
@@ -88,67 +94,74 @@ export function Properties() {
             Exclusive Property Portfolio
           </h2>
           <p className="text-lg text-muted-foreground">
-            Curated selection of premium properties in the most sought-after
-            locations
+            Curated selection of premium properties in the most sought-after locations
           </p>
         </div>
 
         {/* Properties Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {properties.map((property) => (
-            <div key={property.id} className="group cursor-pointer">
-              {/* Image Container */}
-              <div className="relative aspect-[4/3] overflow-hidden mb-6">
-                <ImageWithFallback
-                  src={property.image}
-                  alt={property.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute top-4 right-4 px-3 py-1 bg-white text-foreground text-sm font-medium">
-                  {property.status}
+            <a 
+              key={property.id} 
+              href={property.zillowUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group block transition-transform hover:-translate-y-1"
+            >
+              <div className="cursor-pointer">
+                {/* Image Container */}
+                <div className="relative aspect-[4/3] overflow-hidden mb-6">
+                  <ImageWithFallback
+                    src={property.image}
+                    alt={property.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-white text-foreground text-sm font-medium">
+                    {property.status}
+                  </div>
                 </div>
-              </div>
 
-              {/* Property Details */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                  <MapPin size={16} />
-                  <span>{property.location}</span>
-                </div>
+                {/* Property Details */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                    <MapPin size={16} />
+                    <span>{property.location}</span>
+                  </div>
 
-                <h3
-                  className="font-[--font-serif] text-foreground"
-                  style={{ fontSize: "1.5rem", fontWeight: "600" }}
-                >
-                  {property.title}
-                </h3>
+                  <h3
+                    className="font-[--font-serif] text-foreground group-hover:text-primary transition-colors"
+                    style={{ fontSize: "1.5rem", fontWeight: "600" }}
+                  >
+                    {property.title}
+                  </h3>
 
-                <p
-                  className="font-[--font-serif] text-primary"
-                  style={{ fontSize: "1.75rem", fontWeight: "600" }}
-                >
-                  {property.price}
-                </p>
+                  <p
+                    className="font-[--font-serif] text-primary"
+                    style={{ fontSize: "1.75rem", fontWeight: "600" }}
+                  >
+                    {property.price}
+                  </p>
 
-                {/* Property Features */}
-                <div className="flex items-center gap-6 pt-4 border-t border-border text-muted-foreground">
-                  {property.beds > 0 && (
+                  {/* Property Features */}
+                  <div className="flex items-center gap-6 pt-4 border-t border-border text-muted-foreground">
+                    {property.beds > 0 && (
+                      <div className="flex items-center gap-2">
+                        <Bed size={18} />
+                        <span className="text-sm">{property.beds} Beds</span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-2">
-                      <Bed size={18} />
-                      <span className="text-sm">{property.beds} Beds</span>
+                      <Bath size={18} />
+                      <span className="text-sm">{property.baths} Baths</span>
                     </div>
-                  )}
-                  <div className="flex items-center gap-2">
-                    <Bath size={18} />
-                    <span className="text-sm">{property.baths} Baths</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Square size={18} />
-                    <span className="text-sm">{property.sqft} sqft</span>
+                    <div className="flex items-center gap-2">
+                      <Square size={18} />
+                      <span className="text-sm">{property.sqft} sqft</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
