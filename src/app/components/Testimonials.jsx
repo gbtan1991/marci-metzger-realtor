@@ -2,28 +2,28 @@ import { Star, Quote } from 'lucide-react';
 
 export function Testimonials() {
   const testimonials = [
-    {
-      id: 1,
-      name: 'Jennifer Martinez',
-      role: 'CEO, Tech Innovations',
-      content: 'Working with this realtor was an absolute pleasure. Their deep market knowledge and professionalism made finding our dream home effortless. Highly recommended!',
-      rating: 5
-    },
-    {
-      id: 2,
-      name: 'David Thompson',
-      role: 'Investment Banker',
-      content: 'Exceptional service from start to finish. They negotiated a fantastic deal and handled every detail with precision. A true real estate expert.',
-      rating: 5
-    },
-    {
-      id: 3,
-      name: 'Sarah Chen',
-      role: 'Entrepreneur',
-      content: 'I\'ve worked with many realtors, but none compare to this level of dedication and expertise. They went above and beyond to ensure a smooth transaction.',
-      rating: 5
-    }
-  ];
+  {
+    "id": 1,
+    "name": "James Davis",
+    "role": "Team Lead, Marci Metzger Group",
+    "content": "Leading a team under Marci’s guidance has been an incredible experience. Her 30+ years of expertise and 'client-first' philosophy aren't just slogans—they are the standard she lives by every day. She empowers us to deliver the best results in Pahrump.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "David Thompson",
+    "role": "Local Business Owner",
+    "content": "Exceptional service from start to finish. Marci negotiated a fantastic deal on our commercial space and handled every detail with precision. She is a true Pahrump real estate expert who knows this market better than anyone.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Sarah Chen",
+    "role": "Homeowner in Mountain Falls",
+    "content": "I've worked with many realtors, but none compare to Marci’s level of dedication. She went above and beyond to ensure our relocation was smooth and stress-free. Her reputation as the top agent in the valley is well-deserved!",
+    "rating": 5
+  }
+];
 
   return (
     <section id="testimonials" className="py-24 bg-white">
